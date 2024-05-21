@@ -21,7 +21,7 @@ const router = new Router();
  * @param {KoaNext} next - Koa next middleware function
  */
 router.get("/", (ctx, next) => {
-  ctx.response.body = { message: "Hello world!" };
+  ctx.response.body = { message: "Página de rodri" };
   ctx.status = 200;
 });
 
