@@ -1,16 +1,29 @@
 body {
     margin: 0;
     font-family: 'Work Sans', Arial, sans-serif;
+    scroll-behavior: smooth; /* Desplazamiento suave */
 }
 
 .header {
     background-color: #ffffff; /* Fondo color blanco */
     text-align: center;
     padding: 20px 0; /* Espaciado interno */
+    position: relative;
 }
 
 .header img {
     width: 200px; /* Tamaño del logo */
+}
+
+.contact-link {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: #000000; /* Color negro */
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .content, .additional-content {
@@ -32,11 +45,6 @@ h2 {
 
 p {
     margin-bottom: 0; /* Elimina el margen inferior por defecto */
-}
-
-.right-content img, .left-content-reversed img {
-    width: 100%; /* Ajusta el tamaño de la imagen */
-    height: auto; /* Mantiene la proporción */
 }
 
 .additional-section {
@@ -85,6 +93,9 @@ button:hover {
     border-radius: 4px;
     margin-bottom: 10px;
     padding: 10px;
+    width: 80%; /* Ajustar el ancho de la barra */
+    margin-left: auto;
+    margin-right: auto; /* Centrando la barra */
 }
 
 .accordion-header {
@@ -109,6 +120,29 @@ button:hover {
     font-size: 20px;
     font-weight: bold;
 }
+
+/* Estilos para el efecto parallax */
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+    height: 100vh; /* Ajusta la altura para cubrir toda la ventana del navegador */
+}
+
+.parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    transition: transform 0.3s ease;
+}
+
+
+
+
+
+
 
 
 

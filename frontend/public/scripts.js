@@ -15,5 +15,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Scroll suave para el enlace "Contáctanos"
+    document.querySelector('.contact-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#contacto').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+
+    // Efecto parallax
+    var parallaxElements = document.querySelectorAll('.parallax');
+    window.addEventListener('scroll', function() {
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        parallaxElements.forEach(function(element) {
+            var speed = element.getAttribute('data-speed') || 0.1; // Velocidad por defecto más lenta
+            element.style.transform = 'translateY(' + (scrollTop * speed) + 'px)';
+        });
+    });
 });
+
+
+
+
+
+
+
 
