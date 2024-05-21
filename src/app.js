@@ -3,7 +3,7 @@
  * @typedef {import('koa').Next} KoaNext
  */
 
-PORT = 3000;
+const PORT = 3000;
 
 const Router = require("@koa/router");
 const Koa = require("koa");
@@ -11,9 +11,10 @@ const { default: koaBody } = require("koa-body");
 const KoaLogger = require("koa-logger");
 const db = require("./models");
 const cors = require("@koa/cors");
+const serve = require("koa-static");
+const path = require("path");
 
 const app = new Koa();
-
 const router = new Router();
 
 /**
@@ -53,8 +54,12 @@ app.use(KoaLogger());
 app.use(cors({ origin: "*" }));
 app.use(koaBody());
 
+// Servir archivos estáticos desde la carpeta frontend/public
+app.use(serve(path.join(__dirname, "../frontend/public")));
+
 app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(PORT, () => {
   console.log(`app listening on port: ${PORT}`);
 });
+
