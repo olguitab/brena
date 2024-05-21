@@ -1,61 +1,124 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    font-family: 'Work Sans', Arial, sans-serif;
 }
 
-.container {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 400px;
-    width: 100%;
-}
-
-h1 {
+.header {
+    background-color: #ffffff; /* Fondo color blanco */
     text-align: center;
-    color: #4a90e2;
+    padding: 20px 0; /* Espaciado interno */
 }
 
-.form-grid {
-    display: grid;
-    gap: 15px;
+.header img {
+    width: 200px; /* Tamaño del logo */
 }
 
-.form-group {
+.content, .additional-content {
+    display: flex;
+    background-color: #f0f0f0; /* Fondo color gris */
+    align-items: center; /* Alinea verticalmente al centro */
+}
+
+.left-content, .right-content, .left-content-reversed, .right-content-reversed {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 0; /* Elimina el margen superior por defecto */
+    font-size: 2rem; /* Tamaño de fuente más grande */
+}
+
+p {
+    margin-bottom: 0; /* Elimina el margen inferior por defecto */
+}
+
+.right-content img, .left-content-reversed img {
+    width: 100%; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción */
+}
+
+.additional-section {
+    background-color: #f0f0f0; /* Fondo color gris */
+    padding: 20px;
+    text-align: center;
+}
+
+.additional-section h3 {
+    margin-top: 0; /* Elimina el margen superior por defecto */
+    font-size: 1.75rem; /* Tamaño de fuente más grande */
+}
+
+form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #4a90e2;
-}
-
-input {
+input[type="text"], input[type="email"], input[type="tel"], button {
+    width: 80%;
     padding: 10px;
+    margin: 10px 0;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-sizing: border-box;
+    font-family: 'Work Sans', Arial, sans-serif; /* Usar Work Sans */
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #4a90e2;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto blanco */
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    border: none; /* Sin borde */
+    font-family: 'Work Sans', Arial, sans-serif; /* Usar Work Sans */
 }
 
 button:hover {
-    background-color: #357ab7;
+    background-color: #333333; /* Color de fondo al pasar el ratón */
 }
+
+/* Estilos para la barra desplegable */
+.accordion {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px 0;
+}
+
+.accordion-header.open + .accordion-content {
+    display: block;
+}
+
+.plus-minus {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
