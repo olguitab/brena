@@ -29,11 +29,16 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         parallaxElements.forEach(function(element) {
-            var speed = element.getAttribute('data-speed') || 0.1; // Velocidad por defecto más lenta
-            element.style.transform = 'translateY(' + (scrollTop * speed) + 'px)';
+            var speed = element.getAttribute('data-speed') || 0.1;
+            var maxTranslate = (element.clientHeight - element.parentElement.clientHeight) / 2;
+            var translateY = Math.max(-maxTranslate, Math.min(maxTranslate, scrollTop * speed));
+            element.style.transform = 'translateY(' + translateY + 'px)';
         });
     });
 });
+
+
+
 
 
 

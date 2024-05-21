@@ -30,6 +30,7 @@ body {
     display: flex;
     background-color: #f0f0f0; /* Fondo color gris */
     align-items: center; /* Alinea verticalmente al centro */
+    padding: 40px 0; /* Más espacio entre las secciones */
 }
 
 .left-content, .right-content, .left-content-reversed, .right-content-reversed {
@@ -49,8 +50,9 @@ p {
 
 .additional-section {
     background-color: #f0f0f0; /* Fondo color gris */
-    padding: 20px;
+    padding: 40px 0; /* Más espacio entre la sección "Qué ofrecemos" y las demás */
     text-align: center;
+    margin: 40px 0; /* Añadir margen para más espacio alrededor */
 }
 
 .additional-section h3 {
@@ -125,18 +127,26 @@ button:hover {
 .parallax-container {
     position: relative;
     overflow: hidden;
-    height: 100vh; /* Ajusta la altura para cubrir toda la ventana del navegador */
+    height: 100vh; /* Altura para cubrir toda la ventana del navegador */
+    width: 100%;
+    margin: 40px 0; /* Más espacio alrededor de las secciones */
 }
 
 .parallax {
     position: absolute;
-    top: 0;
+    top: -25%; /* Ajusta la imagen para que siempre se vea */
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 150%; /* Hacer la imagen más alta que el contenedor para el efecto parallax */
     object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    object-position: center; /* Centra la imagen en el contenedor */
     transition: transform 0.3s ease;
 }
+
+
+
+
+
 
 
 
