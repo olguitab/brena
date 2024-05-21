@@ -1,0 +1,33 @@
+{
+  "name": "sample-app-deploy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:IIC2513-2022-2/sample-app-deploy.git",
+  "author": "domingo2000 <domingo.edwards@uc.cl>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "deploy": "node start.js",
+    "db:migrate": "sequelize db:migrate",
+    "db:seed": "sequelize db:seed:all",
+    "db:drop": "sequelize db:drop",
+    "db:create": "sequelize db:create",
+    "db:reset": "run-s db:drop db:create"
+  },
+  "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "@koa/router": "^12.0.0",
+    "dotenv": "^16.1.4",
+    "koa": "^2.14.2",
+    "koa-body": "^6.0.1",
+    "koa-logger": "^3.2.1",
+    "pg": "^8.11.0",
+    "sequelize": "^6.32.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "npm-run-all": "^4.1.5",
+    "sequelize-cli": "^6.6.1"
+  }
+}
