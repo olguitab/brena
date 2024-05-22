@@ -1,41 +1,33 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var headers = document.querySelectorAll('.accordion-header');
-    headers.forEach(function(header) {
-        header.addEventListener('click', function() {
-            var isOpen = header.classList.contains('open');
-            headers.forEach(function(h) {
-                h.classList.remove('open');
-                h.querySelector('.plus-minus').textContent = '+';
-                h.nextElementSibling.style.display = 'none';
-            });
-            if (!isOpen) {
-                header.classList.add('open');
-                header.querySelector('.plus-minus').textContent = '–';
-                header.nextElementSibling.style.display = 'block';
-            }
-        });
-    });
-
-    // Scroll suave para el enlace "Contáctanos"
-    document.querySelector('.contact-link').addEventListener('click', function(e) {
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        document.querySelector('#contacto').scrollIntoView({
-            behavior: 'smooth'
+        const formData = new FormData(e.target);
+        fetch('/submit', {
+            method: 'POST',
+            body: JSON.stringify(Object.fromEntries(formData)),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = 'https://app.youform.io/forms/sm9eblvg'; // Redirigir a la URL deseada
+            } else {
+                return response.text().then(text => { // Añade esto para ver el error en detalle
+                    throw new Error('Error al enviar el formulario: ' + text);
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert(error.message);
         });
     });
+</script>
 
-    // Efecto parallax
-    var parallaxElements = document.querySelectorAll('.parallax');
-    window.addEventListener('scroll', function() {
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        parallaxElements.forEach(function(element) {
-            var speed = element.getAttribute('data-speed') || 0.1;
-            var maxTranslate = (element.clientHeight - element.parentElement.clientHeight) / 2;
-            var translateY = Math.max(-maxTranslate, Math.min(maxTranslate, scrollTop * speed));
-            element.style.transform = 'translateY(' + translateY + 'px)';
-        });
-    });
-});
+
+
+
 
 
 

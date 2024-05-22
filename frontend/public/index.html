@@ -48,6 +48,11 @@
             </form>
         </div>
     </div>
+    <div class="contact-info">
+        <h2>CONTACTO</h2>
+        <p>Email: rodrigo@mejoratucasa.cl</p>
+        <p>Teléfono: +569 8723 8690</p>
+    </div>
     <script>
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -60,23 +65,24 @@
                 }
             })
             .then(response => {
-                window.location.href = 'https://app.youform.io/forms/sm9eblvg'; // Redirigir a la URL deseada
                 if (response.ok) {
                     window.location.href = 'https://app.youform.io/forms/sm9eblvg'; // Redirigir a la URL deseada
                 } else {
-                    response.text().then(text => { // Añade esto para ver el error en detalle
-                        alert('Error al enviar el formulario: ' + text);
+                    return response.text().then(text => { // Añade esto para ver el error en detalle
+                        throw new Error('Error al enviar el formulario: ' + text);
                     });
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
+                alert(error.message);
             });
         });
     </script>
     <script src="scripts.js"></script>
 </body>
 </html>
+
 
 
 
