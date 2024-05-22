@@ -15,7 +15,7 @@
     <div class="content">
         <div class="left-content">
             <h2>Texto de prueba</h2>
-            <p>Descripción</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
         <div class="right-content parallax-container">
             <img src="casa1.jpg" alt="Casa" class="parallax" data-speed="0.1">
@@ -29,7 +29,7 @@
                 <span class="plus-minus">+</span>
             </div>
             <div class="accordion-content">
-                <p>Ofrecemos productos</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
         </div>
         <div class="right-content-reversed">
             <h2>¡Contáctanos!</h2>
-            <form action="#" method="post">
+            <form id="contact-form">
                 <input type="text" name="nombre" placeholder="Nombre" required>
                 <input type="text" name="apellidos" placeholder="Apellidos" required>
                 <input type="tel" name="telefono" placeholder="Teléfono (opcional)">
@@ -48,9 +48,38 @@
             </form>
         </div>
     </div>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            fetch('/submit', {
+                method: 'POST',
+                body: JSON.stringify(Object.fromEntries(formData)),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                window.location.href = 'https://app.youform.io/forms/sm9eblvg'; // Redirigir a la URL deseada
+                if (response.ok) {
+                    window.location.href = 'https://app.youform.io/forms/sm9eblvg'; // Redirigir a la URL deseada
+                } else {
+                    response.text().then(text => { // Añade esto para ver el error en detalle
+                        alert('Error al enviar el formulario: ' + text);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
     <script src="scripts.js"></script>
 </body>
 </html>
+
+
+
 
 
 
