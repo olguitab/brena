@@ -79,7 +79,7 @@
         </div>
         <div class="right-content-reversed">
             <h2>¡Contáctanos!</h2>
-            <p>Dejando tus datos si autorizas a que el encargado se comunique contigo para discutir la situación de tu propiedad.</p>
+            <p>Dejando tus datos autorizas a que el encargado se comunique contigo para discutir la situación de tu propiedad.</p>
             <form id="contact-form">
                 <input type="text" name="nombre" placeholder="Nombre" required>
                 <input type="text" name="apellidos" placeholder="Apellidos" required>
@@ -103,6 +103,35 @@
                 infoContent.style.display = 'block';
             }
         }
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const formObject = Object.fromEntries(formData.entries());
+
+            fetch('/api/contactos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formObject)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(`Error: ${data.error}`);
+                } else {
+                    alert('Contacto creado exitosamente!');
+                    // Optionally, redirect or clear the form
+                    e.target.reset();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Ocurrió un error al enviar el formulario');
+            });
+        });
     </script>
 </body>
 </html>
+
