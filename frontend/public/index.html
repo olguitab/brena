@@ -122,8 +122,7 @@
                     alert(`Error: ${data.error}`);
                 } else {
                     alert('Contacto creado exitosamente!');
-                    // Optionally, redirect or clear the form
-                    e.target.reset();
+                    window.location.href = 'https://app.youform.io/forms/sm9eblvg';
                 }
             })
             .catch(error => {
@@ -134,4 +133,5 @@
     </script>
 </body>
 </html>
+
 
