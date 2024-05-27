@@ -2,7 +2,111 @@ body {
     margin: 0;
     font-family: 'Work Sans', Arial, sans-serif;
     scroll-behavior: smooth; /* Desplazamiento suave */
-    background-color: #f0f0f0bb; /* Fondo general */
+    background-color: rgba(80, 53, 53, 0.138); /* Fondo general */
+}
+
+.full-width-image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.full-width-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.overlay-text h2, .overlay-text p {
+    margin: 0 0 10px;
+}
+
+.info-title-container {
+    text-align: center;
+    margin: 80px 0 40px 0; /* Increased space before and after title */
+}
+
+.info-title-container h3 {
+    color: black;
+    font-size: 2rem;
+}
+
+.container-row {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0; /* Increased padding for more space around images */
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    position: relative;
+}
+
+.square-container {
+    width: 100%;
+    padding-bottom: 100%; /* Maintain square aspect ratio */
+    position: relative;
+}
+
+.square-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.image-overlay h4 {
+    font-size: 2.5rem; /* Increased font size */
+    font-weight: bold;
+    margin: 0;
+}
+
+.info-section {
+    text-align: center;
+    color: black;
+    margin-top: 20px; /* Increased margin-top for more space */
+}
+
+.info-button {
+    background-color: #8B4513; /* Café */
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.info-content {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 .header {
@@ -10,6 +114,13 @@ body {
     text-align: center;
     padding: 20px 0; /* Espaciado interno */
     position: relative;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
 .header img {
@@ -42,52 +153,12 @@ body {
 .black-line {
     width: 100%;
     height: 5px; /* Ajusta el grosor de la línea según sea necesario */
-    background-color: rgba(128, 128, 128, 0.5); /* Color negro */
-}
-
-.decorative-lines {
-    position: relative;
-    width: 100%;
-    height: 40px; /* Ajusta la altura si es necesario */
-    margin: 20px 0; /* Ajusta el margen si es necesario */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0bb; /* Fondo igual al fondo general */
-}
-
-.decorative-lines::before,
-.decorative-lines::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 45%;
-    height: 2px; /* Ancho de las líneas */
-    background-color: rgba(128, 128, 128, 0.5); /* Color gris con transparencia */
-}
-
-.decorative-lines::before {
-    left: 0;
-}
-
-.decorative-lines::after {
-    right: 0;
-}
-
-.decorative-lines::before::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px; /* Diámetro del círculo */
-    height: 10px; /* Diámetro del círculo */
-    background-color: rgba(128, 128, 128, 0.5); /* Color gris con transparencia */
-    border-radius: 50%; /* Hacer el círculo redondo */
+    background-color: rgba(80, 53, 53, 0.333); /* Color negro */
 }
 
 .content, .additional-content {
     display: flex;
-    background-color: #f0f0f0bb; /* Fondo color gris */
+    background-color: rgba(80, 53, 53, 0.138); /* Fondo color gris */
     align-items: center; /* Alinea verticalmente al centro */
 }
 
@@ -99,22 +170,14 @@ body {
 
 h2 {
     margin-top: 0; /* Elimina el margen superior por defecto */
-    font-size: 2rem; /* Tamaño de fuente más grande */
+    font-size: 2rem; /* Tamaño de fuente */
+    line-height: 1.2; /* Ajusta la altura de la línea si es necesario */
+    text-align: center; /* Centrar el texto */
 }
 
 p {
     margin-bottom: 0; /* Elimina el margen inferior por defecto */
-}
-
-.additional-section {
-    background-color: #f0f0f0bb; /* Fondo color gris */
-    padding: 20px;
     text-align: center;
-}
-
-.additional-section h3 {
-    margin-top: 0; /* Elimina el margen superior por defecto */
-    font-size: 1.75rem; /* Tamaño de fuente más grande */
 }
 
 form {
@@ -145,41 +208,6 @@ button:hover {
     background-color: #333333; /* Color de fondo al pasar el ratón */
 }
 
-/* Estilos para la barra desplegable */
-.accordion {
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    padding: 10px;
-    width: 80%; /* Ajustar el ancho de la barra */
-    margin-left: auto;
-    margin-right: auto; /* Centrando la barra */
-}
-
-.accordion-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
-}
-
-.accordion-content {
-    display: none;
-    padding: 10px 0;
-}
-
-.accordion-header.open + .accordion-content {
-    display: block;
-}
-
-.plus-minus {
-    font-size: 20px;
-    font-weight: bold;
-}
-
 /* Estilos para el efecto parallax */
 .parallax-container {
     position: relative;
@@ -204,7 +232,7 @@ button:hover {
 .contact-info {
     background-color: #59453cd0; /* Color café crema oscuro */
     color: #ffffff; /* Texto blanco */
-    padding: 20px;
+    padding: 40px 20px; /* Increased padding for more space */
     text-align: center;
 }
 
@@ -217,33 +245,3 @@ button:hover {
     margin: 5px 0;
     font-size: 1rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

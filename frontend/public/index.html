@@ -16,35 +16,70 @@
         </a>
     </div>
     <div class="black-line"></div> <!-- Línea gruesa negra -->
-    <div class="content">
-        <div class="left-content">
-            <h2>Texto de prueba</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="right-content parallax-container">
-            <img src="casa1.jpg" alt="Casa" class="parallax" data-speed="0.1">
-        </div>
-    </div>
-    <div class="decorative-lines"></div> <!-- Nueva línea decorativa -->
-    <div class="additional-section">
-        <h3>Más sobre nuestra marca</h3>
-        <div class="accordion">
-            <div class="accordion-header">
-                <span>¿Qué ofrecemos?</span>
-                <span class="plus-minus">+</span>
-            </div>
-            <div class="accordion-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
+    <div class="full-width-image-container">
+        <img src="casa3.png" alt="Imagen de casa" class="full-width-image">
+        <div class="overlay-text">
+            <h2>Tu casa está abandonada...?</h2>
+            <h2>Tienes deudas de servicios ó de hipotecas y no tienes como pagarlas..?</h2>
+            <p>¡Conversa con nosotros! NO esperes a quedar marcado en DICOM</p>
         </div>
     </div>
-    <div class="decorative-lines"></div> <!-- Línea decorativa existente -->
+    <div class="info-title-container">
+        <h3>Más información</h3>
+    </div>
+    <div class="container-row">
+        <div class="info-container">
+            <div class="square-container">
+                <img src="casa10.jpg" alt="Casa">
+                <div class="image-overlay">
+                    <h4>¿Qué ofrece Brena?</h4>
+                </div>
+            </div>
+            <div class="info-section">
+                <button class="info-button" onclick="toggleInfo('info1')">Más información</button>
+                <div class="info-content" id="info1">
+                    <p>Hacerte una oferta por tu propiedad en menos de 72 horas. Podrás venderla sin tener que meterle un solo peso.</p>
+                </div>
+            </div>
+        </div>
+        <div class="info-container">
+            <div class="square-container">
+                <img src="casa12.jpg" alt="Casa">
+                <div class="image-overlay">
+                    <h4>Elimina tus Gastos Fijos</h4>
+                </div>
+            </div>
+            <div class="info-section">
+                <button class="info-button" onclick="toggleInfo('info2')">Más información</button>
+                <div class="info-content" id="info2">
+                    <p>Mes a mes se acumulan gastos como agua, electricidad, gas, hipoteca, mantención, seguros, gastos comunes, derechos de aseo y las contribuciones. Y si no se pagan se generan normas adicionales.</p>
+                </div>
+            </div>
+        </div>
+        <div class="info-container">
+            <div class="square-container">
+                <img src="casa11.jpg" alt="Casa">
+                <div class="image-overlay">
+                    <h4>¡Lo llamativo para ti!</h4>
+                </div>
+            </div>
+            <div class="info-section">
+                <button class="info-button" onclick="toggleInfo('info3')">Más información</button>
+                <div class="info-content" id="info3">
+                    <p>Deshacerse de la hipoteca o de las deudas, pero...</p>
+                    <p><strong>¡Lo Más Importante!</strong></p>
+                    <p>Volverás a tener posibilidad de crédito y NO quedarás marcado en el sistema interbancario.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="contacto" class="additional-content">
         <div class="left-content-reversed parallax-container">
             <img src="casa2.jpg" alt="Casa" class="parallax" data-speed="0.1">
         </div>
         <div class="right-content-reversed">
             <h2>¡Contáctanos!</h2>
+            <p>Dejando tus datos autorizas a que el encargado se comunique contigo para discutir la situación de tu propiedad.</p>
             <form id="contact-form">
                 <input type="text" name="nombre" placeholder="Nombre" required>
                 <input type="text" name="apellidos" placeholder="Apellidos" required>
@@ -63,66 +98,30 @@
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(e.target);
-            fetch('/submit', {
+            const formObject = Object.fromEntries(formData.entries());
+
+            fetch('/api/contactos', {
                 method: 'POST',
-                body: JSON.stringify(Object.fromEntries(formData)),
                 headers: {
                     'Content-Type': 'application/json'
-                }
+                },
+                body: JSON.stringify(formObject)
             })
-            .then(response => {
-                window.location.href = 'https://app.youform.io/forms/sm9eblvg'
-                if (response.ok) {
-                    window.location.href = 'https://app.youform.io/forms/sm9eblvg'; // Redirigir a la URL deseada
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(`Error: ${data.error}`);
                 } else {
-                    return response.text().then(text => { // Añade esto para ver el error en detalle
-                        throw new Error('Error al enviar el formulario: ' + text);
-                    });
+                    alert('Contacto creado exitosamente!');
+                    // Optionally, redirect or clear the form
+                    e.target.reset();
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert(error.message);
+                alert('Ocurrió un error al enviar el formulario');
             });
         });
     </script>
-    <script src="scripts.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
