@@ -10,74 +10,46 @@
 <body>
     <div class="header">
         <a href="#contacto" class="contact-link">Contáctanos</a>
-        <img src="brena.jpg" alt="Logo de Brena">
+        <img src="brena.png" alt="Logo de Brena">
         <a href="https://www.instagram.com" target="_blank" class="instagram-link">
             <img src="ig.png" alt="Instagram">
         </a>
     </div>
-    <div class="black-line"></div> <!-- Línea gruesa negra -->
-    <div class="full-width-image-container">
-        <img src="casa3.png" alt="Imagen de casa" class="full-width-image">
-        <div class="overlay-text">
+    <div class="content-container">
+        <div class="text-content">
             <h2>Tu casa está abandonada...?</h2>
-            <h2>Tienes deudas de servicios ó de hipotecas y no tienes como pagarlas..?</h2>
+            <h2 class="spaced-text">Tienes deudas de servicios ó de hipotecas y no tienes como pagarlas..?</h2>
             <p>¡Conversa con nosotros! NO esperes a quedar marcado en DICOM</p>
         </div>
+        <div class="image-content">
+            <img src="casa1.jpg" alt="Imagen de casa" class="side-image">
+        </div>
     </div>
-    <div class="info-title-container">
+    <div class="additional-section">
         <h3>Más información</h3>
-    </div>
-    <div class="container-row">
-        <div class="info-container">
-            <div class="square-container">
-                <img src="casa10.jpg" alt="Casa">
-                <div class="image-overlay">
-                    <h4>¿Qué ofrece Brena?</h4>
-                </div>
-            </div>
-            <div class="info-section">
-                <button class="info-button" onclick="toggleInfo('info1')">Más información</button>
-                <div class="info-content" id="info1">
-                    <p>Hacerte una oferta por tu propiedad en menos de 72 horas. Podrás venderla sin tener que meterle un solo peso.</p>
-                </div>
-            </div>
+        <div class="decorative-line"></div>
+        <div class="info-section">
+            <h4>¿Qué ofrece Brena?</h4>
+            <p>Hacerte una oferta por tu propiedad en menos de 72 horas. Podrás venderla sin tener que meterle un solo peso.</p>
         </div>
-        <div class="info-container">
-            <div class="square-container">
-                <img src="casa12.jpg" alt="Casa">
-                <div class="image-overlay">
-                    <h4>Elimina tus Gastos Fijos</h4>
-                </div>
-            </div>
-            <div class="info-section">
-                <button class="info-button" onclick="toggleInfo('info2')">Más información</button>
-                <div class="info-content" id="info2">
-                    <p>Mes a mes se acumulan gastos como agua, electricidad, gas, hipoteca, mantención, seguros, gastos comunes, derechos de aseo y las contribuciones. Y si no se pagan se generan normas adicionales.</p>
-                </div>
-            </div>
+        <div class="decorative-line"></div>
+        <div class="info-section">
+            <h4>Elimina tus Gastos Fijos</h4>
+            <p>Mes a mes se acumulan gastos como agua, electricidad, gas, hipoteca, mantención, seguros, gastos comunes, derechos de aseo y las contribuciones. Y si no se pagan se generan normas adicionales.</p>
         </div>
-        <div class="info-container">
-            <div class="square-container">
-                <img src="casa11.jpg" alt="Casa">
-                <div class="image-overlay">
-                    <h4>¡Lo llamativo para ti!</h4>
-                </div>
-            </div>
-            <div class="info-section">
-                <button class="info-button" onclick="toggleInfo('info3')">Más información</button>
-                <div class="info-content" id="info3">
-                    <p>Deshacerse de la hipoteca o de las deudas, pero...</p>
-                    <p><strong>¡Lo Más Importante!</strong></p>
-                    <p>Volverás a tener posibilidad de crédito y NO quedarás marcado en el sistema interbancario.</p>
-                </div>
-            </div>
+        <div class="decorative-line"></div>
+        <div class="info-section">
+            <h4>Lo llamativo para ti!</h4>
+            <p>Deshacerse de la hipoteca o de las deudas, pero...</p>
+            <p><strong>¡Lo Más Importante!</strong></p>
+            <p>Volverás a tener posibilidad de crédito y NO quedarás marcado en el sistema interbancario.</p>
         </div>
     </div>
-    <div id="contacto" class="additional-content">
+    <div id="contacto" class="additional-content spaced-blocks">
         <div class="left-content-reversed parallax-container">
             <img src="casa2.jpg" alt="Casa" class="parallax" data-speed="0.1">
         </div>
-        <div class="right-content-reversed">
+        <div class="right-content-reversed spaced-blocks">
             <h2>¡Contáctanos!</h2>
             <p>Dejando tus datos autorizas a que el encargado se comunique contigo para discutir la situación de tu propiedad.</p>
             <form id="contact-form">
@@ -95,43 +67,31 @@
         <p>Teléfono: +569 8723 8690</p>
     </div>
     <script>
-        function toggleInfo(id) {
-            const infoContent = document.getElementById(id);
-            if (infoContent.style.display === 'block') {
-                infoContent.style.display = 'none';
-            } else {
-                infoContent.style.display = 'block';
-            }
-        }
-
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(e.target);
-            const formObject = Object.fromEntries(formData.entries());
-
             fetch('/api/contactos', {
                 method: 'POST',
+                body: JSON.stringify(Object.fromEntries(formData)),
                 headers: {
                     'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formObject)
+                }
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    alert(`Error: ${data.error}`);
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = 'https://app.youform.io/forms/sm9eblvg'; // Redirigir a la URL deseada
                 } else {
-                    alert('Contacto creado exitosamente!');
-                    window.location.href = 'https://app.youform.io/forms/sm9eblvg';
+                    return response.text().then(text => {
+                        throw new Error('Error al enviar el formulario: ' + text);
+                    });
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Ocurrió un error al enviar el formulario');
+                alert(error.message);
             });
         });
     </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
-
-

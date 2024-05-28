@@ -1,130 +1,20 @@
 body {
     margin: 0;
     font-family: 'Work Sans', Arial, sans-serif;
-    scroll-behavior: smooth; /* Desplazamiento suave */
-    background-color: rgba(80, 53, 53, 0.138); /* Fondo general */
-}
-
-.full-width-image-container {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-
-.full-width-image {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-}
-
-.overlay-text h2, .overlay-text p {
-    margin: 0 0 10px;
-}
-
-.info-title-container {
-    text-align: center;
-    margin: 80px 0 40px 0; /* Increased space before and after title */
-}
-
-.info-title-container h3 {
-    color: black;
-    font-size: 2rem;
-}
-
-.container-row {
-    display: flex;
-    justify-content: space-around;
-    padding: 40px 0; /* Increased padding for more space around images */
-}
-
-.info-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-    position: relative;
-}
-
-.square-container {
-    width: 100%;
-    padding-bottom: 100%; /* Maintain square aspect ratio */
-    position: relative;
-}
-
-.square-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.image-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-}
-
-.image-overlay h4 {
-    font-size: 2.5rem; /* Increased font size */
-    font-weight: bold;
-    margin: 0;
-}
-
-.info-section {
-    text-align: center;
-    color: black;
-    margin-top: 20px; /* Increased margin-top for more space */
-}
-
-.info-button {
-    background-color: #59453cd0; /* Café */
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.info-content {
-    display: none;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
-    color: black;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
+    scroll-behavior: smooth;
+    background-color: #f2f2f2;
+    color: black; /* Color de las letras en negro */
 }
 
 .header {
-    background-color: #ffffff; /* Fondo color blanco */
+    background-color: #f2f2f2;
     text-align: center;
-    padding: 20px 0; /* Espaciado interno */
+    padding: 20px 0;
     position: relative;
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    background: #333;
-    background-image: linear-gradient(to right, #ccc, #333, #ccc);
-}
-
 .header img {
-    width: 200px; /* Tamaño del logo */
+    width: 200px;
 }
 
 .contact-link {
@@ -133,7 +23,7 @@ hr {
     top: 50%;
     transform: translateY(-50%);
     text-decoration: none;
-    color: #000000; /* Color negro */
+    color: #000000;
     font-size: 1rem;
     font-weight: bold;
 }
@@ -146,93 +36,170 @@ hr {
 }
 
 .instagram-link img {
-    width: 30px; /* Ajusta el tamaño según sea necesario */
-    height: 30px; /* Ajusta el tamaño según sea necesario */
+    width: 30px;
+    height: 30px;
 }
 
-.black-line {
-    width: 100%;
-    height: 5px; /* Ajusta el grosor de la línea según sea necesario */
-    background-color: rgba(80, 53, 53, 0.333); /* Color negro */
-}
-
-.content, .additional-content {
+.content-container {
     display: flex;
-    background-color: rgba(80, 53, 53, 0.138); /* Fondo color gris */
-    align-items: center; /* Alinea verticalmente al centro */
+    padding: 20px;
+    align-items: center;
+    background-color: #f2f2f2;
 }
 
-.left-content, .right-content, .left-content-reversed, .right-content-reversed {
+.text-content {
+    flex: 1;
+    padding-right: 20px;
+    font-size: 1.5rem; /* Aumenta el tamaño del texto */
+    line-height: 2.5rem; /* Aumenta el espacio entre las frases */
+}
+
+.text-content h2, .text-content p {
+    margin-bottom: 40px; /* Aumenta la separación entre las frases */
+}
+
+.image-content {
     flex: 1;
     text-align: center;
-    padding: 20px;
 }
 
-h2 {
-    margin-top: 0; /* Elimina el margen superior por defecto */
-    font-size: 2rem; /* Tamaño de fuente */
-    line-height: 1.2; /* Ajusta la altura de la línea si es necesario */
-    text-align: center; /* Centrar el texto */
+.side-image {
+    max-width: 100%;
+    height: auto;
 }
 
-p {
-    margin-bottom: 0; /* Elimina el margen inferior por defecto */
-    text-align: center;
+.additional-section {
+    background-color: #f2f2f2;
+    padding: 60px 20px; /* Aumenta la separación de la primera imagen */
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+    border: none;
+}
+
+.additional-section h3 {
+    margin-top: 0;
+    font-size: 1.75rem;
+    text-align: left;
+    border-bottom: none;
+    padding-bottom: 10px;
+}
+
+.info-section {
+    padding: 20px 0;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.info-section h4 {
+    margin: 0 0 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.info-section p {
+    margin: 0;
+}
+
+.decorative-line {
+    width: 100%; /* Ajuste de longitud de la línea */
+    max-width: 800px;
+    height: 2px;
+    background-color: #000;
+    margin: 20px auto;
 }
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px; /* Aumenta el espacio entre los campos del formulario */
+    margin-top: 40px; /* Aumenta la separación entre el título y el formulario */
 }
 
 input[type="text"], input[type="email"], input[type="tel"], button {
     width: 80%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 15px; /* Aumenta el padding para agrandar los campos */
     border: 1px solid #ccc;
-    border-radius: 8px; /* Bordes redondeados */
+    border-radius: 8px;
     box-sizing: border-box;
-    font-family: 'Work Sans', Arial, sans-serif; /* Usar Work Sans */
+    font-family: 'Work Sans', Arial, sans-serif;
 }
 
 button {
-    background-color: #000000; /* Fondo negro */
-    color: #ffffff; /* Texto blanco */
+    background-color: #000000;
+    color: #ffffff;
     cursor: pointer;
-    border: none; /* Sin borde */
-    font-family: 'Work Sans', Arial, sans-serif; /* Usar Work Sans */
+    border: none;
+    font-family: 'Work Sans', Arial, sans-serif;
 }
 
 button:hover {
-    background-color: #333333; /* Color de fondo al pasar el ratón */
+    background-color: #333333;
 }
 
 /* Estilos para el efecto parallax */
 .parallax-container {
     position: relative;
     overflow: hidden;
-    height: 100vh; /* Altura para cubrir toda la ventana del navegador */
+    height: 100vh;
     width: 100%;
-    margin: 40px 0; /* Más espacio alrededor de las secciones */
+    margin: 40px 0;
 }
 
 .parallax {
     position: absolute;
-    top: -25%; /* Ajusta la imagen para que siempre se vea */
+    top: -25%;
     left: 0;
     width: 100%;
-    height: 150%; /* Hacer la imagen más alta que el contenedor para el efecto parallax */
-    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
-    object-position: center; /* Centra la imagen en el contenedor */
+    height: 150%;
+    object-fit: cover;
+    object-position: center;
     transition: transform 0.3s ease;
+}
+
+/* Estilos para la última sección de contacto */
+.additional-content {
+    display: flex;
+    background-color: #f2f2f2;
+    align-items: center;
+    padding-top: 60px; /* Aumenta la separación de la sección anterior */
+}
+
+.left-content-reversed {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.right-content-reversed {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+.spaced-blocks p {
+    line-height: 1.8;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 2.5rem; /* Aumenta el tamaño del título en la última sección */
+    line-height: 1.2;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 0;
+    text-align: center;
 }
 
 /* Estilos para la información de contacto */
 .contact-info {
-    background-color: #59453cd0; /* Color café crema oscuro */
-    color: #ffffff; /* Texto blanco */
-    padding: 40px 20px; /* Increased padding for more space */
+    background-color: #59453cd0;
+    color: #ffffff;
+    padding: 20px;
     text-align: center;
 }
 
@@ -245,4 +212,3 @@ button:hover {
     margin: 5px 0;
     font-size: 1rem;
 }
-
