@@ -42,6 +42,7 @@ body {
 
 .content-container {
     display: flex;
+    flex-direction: row; /* Default to row */
     padding: 20px;
     align-items: center;
     background-color: #f2f2f2;
@@ -50,12 +51,12 @@ body {
 .text-content {
     flex: 1;
     padding-right: 20px;
-    font-size: 1.5rem; /* Aumenta el tamaño del texto */
-    line-height: 2.5rem; /* Aumenta el espacio entre las frases */
+    font-size: 2rem; /* Aumenta el tamaño del texto */
+    line-height: 3.5rem; /* Aumenta el espacio entre las frases */
 }
 
 .text-content h2, .text-content p {
-    margin-bottom: 40px; /* Aumenta la separación entre las frases */
+    margin-bottom: 50px; /* Aumenta la separación entre las frases */
 }
 
 .image-content {
@@ -70,7 +71,7 @@ body {
 
 .additional-section {
     background-color: #f2f2f2;
-    padding: 60px 20px; /* Aumenta la separación de la primera imagen */
+    padding: 80px 20px; /* Aumenta la separación de la primera imagen */
     text-align: left;
     margin: 0 auto;
     max-width: 800px;
@@ -79,10 +80,10 @@ body {
 
 .additional-section h3 {
     margin-top: 0;
-    font-size: 1.75rem;
+    font-size: 2.5rem; /* Aumenta el tamaño del texto */
     text-align: left;
     border-bottom: none;
-    padding-bottom: 10px;
+    padding-bottom: 30px; /* Aumenta la separación debajo del título */
 }
 
 .info-section {
@@ -110,12 +111,17 @@ body {
     margin: 20px auto;
 }
 
+.decorative-line.last {
+    border: 2px dashed #000;
+    background-color: transparent; /* Diferente diseño para la última línea */
+}
+
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Aumenta el espacio entre los campos del formulario */
-    margin-top: 40px; /* Aumenta la separación entre el título y el formulario */
+    gap: 30px; /* Aumenta el espacio entre los campos del formulario */
+    margin-top: 60px; /* Aumenta la separación entre el título y el formulario */
 }
 
 input[type="text"], input[type="email"], input[type="tel"], button {
@@ -164,7 +170,7 @@ button:hover {
     display: flex;
     background-color: #f2f2f2;
     align-items: center;
-    padding-top: 60px; /* Aumenta la separación de la sección anterior */
+    padding-top: 80px; /* Aumenta la separación de la sección anterior */
 }
 
 .left-content-reversed {
@@ -185,9 +191,10 @@ button:hover {
 
 h2 {
     margin-top: 0;
-    font-size: 2.5rem; /* Aumenta el tamaño del título en la última sección */
+    font-size: 3rem; /* Aumenta el tamaño del título en la última sección */
     line-height: 1.2;
     text-align: center;
+    margin-bottom: 40px; /* Aumenta la separación debajo del título */
 }
 
 p {
@@ -212,4 +219,32 @@ p {
     margin: 5px 0;
     font-size: 1rem;
 }
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+
+    .image-content img {
+        width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    }
+
+    .additional-section {
+        padding: 40px 20px; /* Ajusta el padding para dispositivos móviles */
+    }
+
+    .additional-content {
+        padding-top: 40px; /* Ajusta el padding para dispositivos móviles */
+    }
+
+    form {
+        width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"], button {
+        width: 90%; /* Asegura que los campos del formulario ocupen el 90% del ancho del contenedor */
+    }
+}
+
 
