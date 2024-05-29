@@ -51,8 +51,8 @@ body {
 .text-content {
     flex: 1;
     padding-right: 20px;
-    font-size: 2rem; /* Aumenta el tamaño del texto */
-    line-height: 3.5rem; /* Aumenta el espacio entre las frases */
+    font-size: 2.5rem; /* Aumenta el tamaño del texto */
+    line-height: 4rem; /* Aumenta el espacio entre las frases */
 }
 
 .text-content h2, .text-content p {
@@ -61,7 +61,8 @@ body {
 
 .image-content {
     flex: 1;
-    text-align: center;
+    text-align: right; /* Pega la imagen a la derecha */
+    padding: 0; /* Elimina el padding para que no haya margen */
 }
 
 .side-image {
@@ -71,7 +72,7 @@ body {
 
 .additional-section {
     background-color: #f2f2f2;
-    padding: 80px 20px; /* Aumenta la separación de la primera imagen */
+    padding: 60px 20px 40px; /* Reduce el padding superior */
     text-align: left;
     margin: 0 auto;
     max-width: 800px;
@@ -83,11 +84,11 @@ body {
     font-size: 2.5rem; /* Aumenta el tamaño del texto */
     text-align: left;
     border-bottom: none;
-    padding-bottom: 30px; /* Aumenta la separación debajo del título */
+    padding-bottom: 10px; /* Reduce la separación debajo del título */
 }
 
 .info-section {
-    padding: 20px 0;
+    padding: 10px 0; /* Reduce la separación superior e inferior */
     text-align: left;
     padding-left: 20px;
     padding-right: 20px;
@@ -121,7 +122,7 @@ form {
     flex-direction: column;
     align-items: center;
     gap: 30px; /* Aumenta el espacio entre los campos del formulario */
-    margin-top: 60px; /* Aumenta la separación entre el título y el formulario */
+    margin-top: 20px; /* Reduce la separación entre el título y el formulario */
 }
 
 input[type="text"], input[type="email"], input[type="tel"], button {
@@ -169,7 +170,7 @@ button:hover {
     display: flex;
     background-color: #f2f2f2;
     align-items: center;
-    padding-top: 80px; /* Aumenta la separación de la sección anterior */
+    padding-top: 40px; /* Reduce la separación de la sección anterior */
 }
 
 .left-content-reversed {
@@ -193,7 +194,7 @@ h2 {
     font-size: 3rem; /* Aumenta el tamaño del título en la última sección */
     line-height: 1.2;
     text-align: center;
-    margin-bottom: 40px; /* Aumenta la separación debajo del título */
+    margin-bottom: 20px; /* Reduce la separación debajo del título */
 }
 
 p {
@@ -234,7 +235,7 @@ p {
     }
 
     .additional-content {
-        padding-top: 40px; /* Ajusta el padding para dispositivos móviles */
+        padding-top: 20px; /* Ajusta el padding para dispositivos móviles */
     }
 
     form {
