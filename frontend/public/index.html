@@ -17,9 +17,9 @@
     </div>
     <div class="content-container">
         <div class="text-content">
-            <h2>Tu casa está abandonada...?</h2>
-            <h2 class="spaced-text">Tienes deudas de servicios ó de hipotecas y no tienes como pagarlas..?</h2>
-            <p>¡Conversa con nosotros! NO esperes a quedar marcado en DICOM</p>
+            <h2>Tu casa está<br>abandonada...?</h2>
+            <h2 class="spaced-text">Tienes deudas de servicios<br>ó de hipotecas y no tienes<br>como pagarlas..?</h2>
+            <p class="small-text">¡Conversa con nosotros! NO esperes a quedar marcado en DICOM</p>
         </div>
         <div class="image-content">
             <img src="casa1.jpg" alt="Imagen de casa" class="side-image">
@@ -30,19 +30,19 @@
         <div class="decorative-line"></div>
         <div class="info-section">
             <h4>¿Qué ofrece Brena?</h4>
-            <p>Hacerte una oferta por tu propiedad en menos de 72 horas. Podrás venderla sin tener que meterle un solo peso.</p>
+            <p class="bold-text">Hacerte una oferta por tu propiedad en menos de 72 horas. Podrás venderla sin tener que meterle un solo peso.</p>
         </div>
         <div class="decorative-line"></div>
         <div class="info-section">
             <h4>Elimina tus Gastos Fijos</h4>
-            <p>Mes a mes se acumulan gastos como agua, electricidad, gas, hipoteca, mantención, seguros, gastos comunes, derechos de aseo y las contribuciones. Y si no se pagan se generan normas adicionales.</p>
+            <p class="bold-text">Mes a mes se acumulan gastos como agua, electricidad, gas, hipoteca, mantención, seguros, gastos comunes, derechos de aseo y las contribuciones. Y si no se pagan se generan normas adicionales.</p>
         </div>
         <div class="decorative-line"></div>
         <div class="info-section">
             <h4>Lo llamativo para ti!</h4>
-            <p>Deshacerse de la hipoteca o de las deudas, pero...</p>
-            <p><strong>¡Lo Más Importante!</strong></p>
-            <p>Volverás a tener posibilidad de crédito y NO quedarás marcado en el sistema interbancario.</p>
+            <p class="bold-text">Deshacerse de la hipoteca o de las deudas, pero...</p>
+            <p class="underline-bold-text">¡Lo Más Importante!</p>
+            <p class="bold-text">Volverás a tener posibilidad de crédito y NO quedarás marcado en el sistema interbancario.</p>
         </div>
     </div>
     <div id="contacto" class="additional-content spaced-blocks">
@@ -50,13 +50,31 @@
             <img src="casa2.jpg" alt="Casa" class="parallax" data-speed="0.1">
         </div>
         <div class="right-content-reversed spaced-blocks">
-            <h2>Se uno de los primeros</h2>
-            <p>Dejando tus datos autorizas a que el encargado se comunique contigo para discutir la situación de tu propiedad.</p>
+            <div class="center-text">
+                <h2>Se uno de los primeros</h2>
+                <p>Dejando tus datos autorizas a que el encargado se comunique contigo para discutir la situación de tu propiedad.</p>
+            </div>
             <form id="contact-form">
-                <input type="text" name="nombre" placeholder="Nombre" required>
-                <input type="text" name="apellidos" placeholder="Apellidos" required>
-                <input type="tel" name="telefono" placeholder="Teléfono (opcional)">
-                <input type="email" name="correo" placeholder="Correo electrónico" required>
+                <div class="form-group">
+                    <label for="nombre">Nombre (obligatorio)</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono (obligatorio)</label>
+                    <input type="tel" name="telefono" id="telefono" placeholder="Teléfono" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico (obligatorio)</label>
+                    <input type="email" name="correo" id="correo" placeholder="Correo Electrónico" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Si quieres, deja un mensaje (no es obligatorio)</label>
+                    <textarea name="mensaje" id="mensaje" placeholder="Puedes contarnos tu situación" rows="4"></textarea>
+                </div>
                 <button type="submit">Enviar</button>
             </form>
         </div>
@@ -95,4 +113,3 @@
     <script src="scripts.js"></script>
 </body>
 </html>
-

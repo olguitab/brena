@@ -44,25 +44,38 @@ body {
     display: flex;
     flex-direction: row; /* Default to row */
     padding: 20px;
-    align-items: center;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
     background-color: #f2f2f2;
+    margin: 0 40px; /* Adds larger margins on the sides */
+    height: 100vh; /* Full viewport height */
 }
 
 .text-content {
     flex: 1;
-    padding-right: 20px;
-    font-size: 2.5rem; /* Aumenta el tamaño del texto */
-    line-height: 4rem; /* Aumenta el espacio entre las frases */
+    padding-right: 40px; /* Increased padding to the right */
+    font-size: 2.5rem; /* Increase text size */
+    line-height: 3rem; /* Adjust line height */
+    text-align: left; /* Align text to the left */
+    margin-left: 40px; /* Add margin to the left */
 }
 
 .text-content h2, .text-content p {
-    margin-bottom: 50px; /* Aumenta la separación entre las frases */
+    margin-bottom: 30px; /* Adjust bottom margin */
+}
+
+.small-text {
+    font-size: 1rem; /* Reduce text size */
+    line-height: 1.5rem; /* Adjust line height */
+    margin-bottom: 20px; /* Adjust bottom margin */
+    font-weight: bold; /* Make the text bold */
 }
 
 .image-content {
     flex: 1;
-    text-align: right; /* Pega la imagen a la derecha */
-    padding: 0; /* Elimina el padding para que no haya margen */
+    text-align: right; /* Align image to the right */
+    padding: 0; /* Remove padding */
+    margin-right: 40px; /* Add margin to the right */
 }
 
 .side-image {
@@ -72,7 +85,7 @@ body {
 
 .additional-section {
     background-color: #f2f2f2;
-    padding: 60px 20px 40px; /* Reduce el padding superior */
+    padding: 60px 20px 40px; /* Adjust padding */
     text-align: left;
     margin: 0 auto;
     max-width: 800px;
@@ -81,14 +94,14 @@ body {
 
 .additional-section h3 {
     margin-top: 0;
-    font-size: 2.5rem; /* Aumenta el tamaño del texto */
+    font-size: 2.5rem; /* Increase text size */
     text-align: left;
     border-bottom: none;
-    padding-bottom: 10px; /* Reduce la separación debajo del título */
+    padding-bottom: 10px; /* Adjust bottom padding */
 }
 
 .info-section {
-    padding: 10px 0; /* Reduce la separación superior e inferior */
+    padding: 10px 0; /* Adjust padding */
     text-align: left;
     padding-left: 20px;
     padding-right: 20px;
@@ -96,7 +109,7 @@ body {
 
 .info-section h4 {
     margin: 0 0 10px;
-    font-weight: bold;
+    font-weight: normal; /* Normal font weight */
     text-align: left;
 }
 
@@ -104,8 +117,17 @@ body {
     margin: 0;
 }
 
+.bold-text {
+    font-weight: bold; /* Make the text bold */
+}
+
+.underline-bold-text {
+    font-weight: bold; /* Make the text bold */
+    text-decoration: underline; /* Underline the text */
+}
+
 .decorative-line {
-    width: 100%; /* Ajuste de longitud de la línea */
+    width: 100%; /* Adjust line width */
     max-width: 800px;
     height: 2px;
     background-color: #000;
@@ -114,24 +136,35 @@ body {
 
 .decorative-line.last {
     border: 2px dashed #000;
-    background-color: transparent; /* Diferente diseño para la última línea */
+    background-color: transparent; /* Different design for the last line */
 }
 
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 30px; /* Aumenta el espacio entre los campos del formulario */
-    margin-top: 20px; /* Reduce la separación entre el título y el formulario */
+    gap: 20px; /* Adjust gap between form fields */
+    margin-top: 20px; /* Adjust top margin */
 }
 
-input[type="text"], input[type="email"], input[type="tel"], button {
-    width: 80%;
-    padding: 15px; /* Aumenta el padding para agrandar los campos */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.875rem; /* Font size for labels */
+    color: #000;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], button, textarea {
+    width: 100%; /* Full width for form elements */
+    padding: 10px; /* Increase padding */
     border: 1px solid #ccc;
     border-radius: 8px;
     box-sizing: border-box;
     font-family: 'Work Sans', Arial, sans-serif;
+    font-size: 1rem; /* Font size for input fields */
 }
 
 button {
@@ -140,13 +173,15 @@ button {
     cursor: pointer;
     border: none;
     font-family: 'Work Sans', Arial, sans-serif;
+    padding: 10px 20px; /* Add padding to button */
+    font-size: 1rem; /* Font size for button */
 }
 
 button:hover {
     background-color: #333333;
 }
 
-/* Estilos para el efecto parallax */
+/* Styles for parallax effect */
 .parallax-container {
     position: relative;
     overflow: hidden;
@@ -165,12 +200,12 @@ button:hover {
     object-position: center;
 }
 
-/* Estilos para la última sección de contacto */
+/* Styles for the last contact section */
 .additional-content {
     display: flex;
     background-color: #f2f2f2;
     align-items: center;
-    padding-top: 40px; /* Reduce la separación de la sección anterior */
+    padding-top: 40px; /* Adjust padding */
 }
 
 .left-content-reversed {
@@ -185,24 +220,29 @@ button:hover {
     padding: 20px;
 }
 
+.center-text {
+    text-align: center; /* Center text */
+    margin-right: 40px; /* Add margin to the right */
+}
+
 .spaced-blocks p {
     line-height: 1.8;
 }
 
 h2 {
     margin-top: 0;
-    font-size: 3rem; /* Aumenta el tamaño del título en la última sección */
+    font-size: 3rem; /* Increase text size */
     line-height: 1.2;
-    text-align: center;
-    margin-bottom: 20px; /* Reduce la separación debajo del título */
+    text-align: left; /* Align text to the left */
+    margin-bottom: 20px; /* Adjust bottom margin */
 }
 
 p {
     margin-bottom: 0;
-    text-align: center;
+    text-align: left; /* Align text to the left */
 }
 
-/* Estilos para la información de contacto */
+/* Styles for contact information */
 .contact-info {
     background-color: #59453cd0;
     color: #ffffff;
@@ -220,30 +260,35 @@ p {
     font-size: 1rem;
 }
 
-/* Media Queries para dispositivos móviles */
+/* Media Queries for mobile devices */
 @media (max-width: 768px) {
     .content-container {
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        flex-direction: column; /* Change to column on small screens */
+        height: auto; /* Auto height for small screens */
     }
 
     .image-content img {
-        width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+        width: 100%; /* Ensure image takes full width */
     }
 
     .additional-section {
-        padding: 40px 20px; /* Ajusta el padding para dispositivos móviles */
+        padding: 40px 20px; /* Adjust padding for mobile */
     }
 
     .additional-content {
-        padding-top: 20px; /* Ajusta el padding para dispositivos móviles */
+        padding-top: 20px; /* Adjust padding for mobile */
     }
 
     form {
-        width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
+        width: 100%; /* Ensure form takes full width */
     }
 
-    input[type="text"], input[type="email"], input[type="tel"], button {
-        width: 90%; /* Asegura que los campos del formulario ocupen el 90% del ancho del contenedor */
+    input[type="text"], input[type="email"], input[type="tel"], button, textarea {
+        width: 90%; /* Ensure form fields take 90% width */
+    }
+
+    .center-text {
+        margin-right: 0; /* Remove margin on small screens */
     }
 }
 
