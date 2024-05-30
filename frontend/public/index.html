@@ -55,23 +55,34 @@
                 <p>Dejando tus datos autorizas a que el encargado se comunique contigo para discutir la situación de tu propiedad.</p>
             </div>
             <form id="contact-form">
-                <div class="form-group">
+                <div class="form-group-full">
                     <label for="nombre">Nombre (obligatorio)</label>
-                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                    <div class="form-group">
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                        <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" required>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="apellidos">Apellidos</label>
-                    <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" required>
-                </div>
-                <div class="form-group">
+                <div class="form-group-full">
                     <label for="telefono">Teléfono (obligatorio)</label>
                     <input type="tel" name="telefono" id="telefono" placeholder="Teléfono" required>
                 </div>
                 <div class="form-group">
+                    <div class="form-group-full">
+                        <label for="pais">País</label>
+                        <select name="pais" id="pais" required>
+                            <option value="Chile">Chile</option>
+                        </select>
+                    </div>
+                    <div class="form-group-full">
+                        <label for="numero">Número</label>
+                        <input type="tel" name="numero" id="numero" placeholder="+56" required>
+                    </div>
+                </div>
+                <div class="form-group-full">
                     <label for="correo">Correo Electrónico (obligatorio)</label>
                     <input type="email" name="correo" id="correo" placeholder="Correo Electrónico" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group-full">
                     <label for="mensaje">Si quieres, deja un mensaje (no es obligatorio)</label>
                     <textarea name="mensaje" id="mensaje" placeholder="Puedes contarnos tu situación" rows="4"></textarea>
                 </div>
@@ -113,3 +124,4 @@
     <script src="scripts.js"></script>
 </body>
 </html>
+
