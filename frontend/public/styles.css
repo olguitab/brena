@@ -424,6 +424,16 @@ p {
     .decorative-line {
         margin: 20px auto;
     }
+
+    .left-content-reversed {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .right-content-reversed {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -511,4 +521,25 @@ p {
     .decorative-line {
         margin: 20px auto;
     }
+
+    .left-content-reversed {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .right-content-reversed {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .parallax-container {
+        height: auto;
+    }
+
+    .parallax {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
 }
+
