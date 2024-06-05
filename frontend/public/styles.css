@@ -55,8 +55,8 @@ body {
     font-size: 2.5rem;
     line-height: 3rem;
     text-align: left;
-    margin-right: 40px;
-    margin-left: 40px;
+    margin-right: 10px; /* Ajusta el margen derecho */
+    margin-left: 10px; /* Ajusta el margen izquierdo */
 }
 
 .text-content h2, .text-content p {
@@ -64,9 +64,21 @@ body {
     text-align: left; /* Ensure left alignment */
 }
 
+.text-content h2 {
+    font-size: 3.5rem; /* Aumenta el tamaño de la fuente */
+    margin-bottom: 80px; /* Aumenta el espacio inferior */
+}
+
+.text-content .spaced-text {
+    font-size: 3.5rem; /* Aumenta el tamaño de la fuente */
+    margin-top: 80px; /* Aumenta el espacio superior */
+    margin-bottom: 80px; /* Aumenta el espacio inferior */
+}
+
 .small-text {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 1.5rem; /* Aumenta el tamaño de la fuente */
+    line-height: 2rem; /* Ajusta la altura de línea */
+    margin-top: 80px; /* Aumenta el espacio superior */
     margin-bottom: 20px;
     font-weight: bold;
     text-align: left; /* Ensure left alignment */
@@ -86,77 +98,80 @@ body {
 
 .additional-section {
     background-color: #f2f2f2;
-    padding: 60px 20px 40px;
-    text-align: left;
+    padding: 60px 0 40px; /* Elimina el padding lateral */
+    text-align: center; /* Centra el contenido */
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 1400px;
     border: none;
 }
 
 .additional-section h3 {
-    margin-top: 0;
-    font-size: 2.5rem;
+    font-size: 3.5rem; /* Tamaño original */
     text-align: left;
-    border-bottom: none;
-    padding-bottom: 10px;
+    margin-bottom: 20px; /* Reduce el espacio inferior */
+    padding-bottom: 20px; /* Mantiene algo de espacio inferior para separación */
+    padding-left: 120px;
 }
 
 .info-section {
-    padding: 10px 0; /* Reduce la separación superior e inferior */
-    text-align: left;
-    padding-left: 20px;
-    padding-right: 20px;
-    max-width: 1000px; /* Ajusta el ancho máximo para que quede entre las líneas decorativas */
-    margin: 0 auto; /* Centra el contenido horizontalmente */
+    padding-left: 0; /* Elimina el padding lateral */
+    padding-right: 0; /* Elimina el padding lateral */
+    max-width: calc(100% - 250px); /* Ajusta el ancho máximo para que coincida con la línea decorativa */
+    margin: 0 auto; /* Centra el contenido */
+    text-align: left; /* Alinea el texto a la izquierda dentro de la sección */
+    justify-content: space-between;
 }
 
-
 .info-section h4 {
-    margin: 0 0 10px;
+    margin: 0 0 30px; /* Añade más espacio entre el título y el párrafo */
     font-weight: normal;
     text-align: left;
+    font-size: 1.5rem; /* Ajusta el tamaño de la fuente */
 }
 
 .info-section p {
-    margin: 0;
+    justify-content: space-between;
+    margin: 0 0 20px 0; /* Ajusta el margen inferior para más espacio */
+    max-width: calc(100% - 250px); 
+    font-size: 1.25rem; /* Ajusta el tamaño de la fuente */
+    text-align: left; /* Alinea el texto a la izquierda */
 }
 
-.bold-text {
+.info-section .bold-text {
     font-weight: bold;
+    margin-bottom: 40px; /* Añade espacio inferior */
+    margin-top: 40px; /* Añade espacio superior */
 }
 
-.underline-bold-text {
+.info-section .underline-bold-text {
     font-weight: bold;
     text-decoration: underline;
+    font-size: 1.25rem; /* Ajusta el tamaño de la fuente */
+    text-align: left; /* Alinea el texto a la izquierda */
 }
 
 .decorative-line {
-    width: 100%;
-    max-width: 800px;
+    width: calc(100% - 250px); /* Ajusta la línea para que se alinee con el texto */
+    max-width: 100%;
     height: 2px;
     background-color: #000;
-    margin: 20px auto;
-}
-
-.decorative-line.last {
-    border: 2px dashed #000;
-    background-color: transparent;
+    margin: 20px auto; /* Centra la línea */
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px; /* Aumenta el espacio entre los campos del formulario */
     margin-top: 20px;
     max-width: 500px; 
-    margin-left: auto; 
-    margin-right: auto; 
+    margin-left: 0; /* Alinea el formulario a la izquierda */
+    margin-right: auto;
 }
 
 .form-group {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: 30px; /* Aumenta el espacio entre los campos del formulario */
 }
 
 .form-group-full {
@@ -184,7 +199,7 @@ input[type="text"], input[type="email"], input[type="tel"], textarea, select {
     color: #000;
 }
 
-input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="tel"]::placeholder, textarea::placeholder {
+input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="tel"], textarea::placeholder {
     color: #999;
 }
 
@@ -211,7 +226,6 @@ button:hover {
     overflow: hidden;
     height: 100vh;
     width: 100%;
-    margin: 40px 0;
 }
 
 .parallax {
@@ -226,9 +240,9 @@ button:hover {
 
 .additional-content {
     display: flex;
-    background-color: #f2f2f2;
-    align-items: center;
-    padding-top: 40px;
+    background-color: white; /* Cambia el fondo a blanco */
+    align-items: flex-start; /* Ajusta la alineación para que comience desde arriba */
+    padding-top: 0;
 }
 
 .left-content-reversed {
@@ -239,16 +253,34 @@ button:hover {
 
 .right-content-reversed {
     flex: 1;
-    text-align: center; /* Center text in the form section */
+    text-align: left; /* Alinea el texto a la izquierda */
     padding: 20px;
+    padding-top: 0; /* Ajusta el padding superior */
+    margin-left: 40px; /* Añade espacio entre la imagen y el texto */
 }
 
 .center-text {
-    text-align: center;
+    text-align: left; /* Alinea el texto a la izquierda */
     margin-bottom: 20px;
     max-width: 500px; 
-    margin-left: auto; 
+    margin-left: 0; /* Alinea el texto a la izquierda */
     margin-right: auto;
+    margin-top: 0; /* Ajusta el margen superior */
+    padding-top: 40px; /* Añade padding superior */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el contenido */
+}
+
+.center-text h2 {
+    font-size: 3.5rem; /* Ajusta el tamaño de la fuente para que coincida con "Más información" */
+    margin-bottom: 10px; /* Ajusta el espacio inferior */
+    text-align: left; /* Alinea el título a la izquierda */
+}
+
+.center-text p {
+    max-width: 500px; /* Ajusta el margen de ancho para que coincida con el formulario */
+    margin-left: 0; /* Alinea el párrafo a la izquierda */
 }
 
 h2 {
@@ -290,12 +322,20 @@ p {
         height: auto;
     }
 
+    .image-content {
+        width: 100%;
+        margin: 0;
+        text-align: center; /* Centra la imagen en dispositivos móviles */
+    }
+
     .image-content img {
         width: 100%;
+        height: auto; /* Mantén la proporción de la imagen */
+        margin: 0;
     }
 
     .additional-section {
-        padding: 40px 20px;
+        padding: 40px 10px; /* Ajusta el padding a los lados */
     }
 
     .additional-content {
@@ -316,5 +356,9 @@ p {
         margin-right: 0;
     }
 }
+
+
+
+
 
 
