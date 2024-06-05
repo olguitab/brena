@@ -55,33 +55,33 @@ body {
     font-size: 2.5rem;
     line-height: 3rem;
     text-align: left;
-    margin-right: 10px; /* Ajusta el margen derecho */
-    margin-left: 10px; /* Ajusta el margen izquierdo */
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .text-content h2, .text-content p {
     margin-bottom: 30px;
-    text-align: left; /* Ensure left alignment */
+    text-align: left;
 }
 
 .text-content h2 {
-    font-size: 3.5rem; /* Aumenta el tamaño de la fuente */
-    margin-bottom: 80px; /* Aumenta el espacio inferior */
+    font-size: 3.5rem;
+    margin-bottom: 80px;
 }
 
 .text-content .spaced-text {
-    font-size: 3.5rem; /* Aumenta el tamaño de la fuente */
-    margin-top: 80px; /* Aumenta el espacio superior */
-    margin-bottom: 80px; /* Aumenta el espacio inferior */
+    font-size: 3.5rem;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .small-text {
-    font-size: 1.5rem; /* Aumenta el tamaño de la fuente */
-    line-height: 2rem; /* Ajusta la altura de línea */
-    margin-top: 80px; /* Aumenta el espacio superior */
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-top: 80px;
     margin-bottom: 20px;
     font-weight: bold;
-    text-align: left; /* Ensure left alignment */
+    text-align: left;
 }
 
 .image-content {
@@ -98,80 +98,80 @@ body {
 
 .additional-section {
     background-color: #f2f2f2;
-    padding: 60px 0 40px; /* Elimina el padding lateral */
-    text-align: center; /* Centra el contenido */
+    padding: 60px 0 40px;
+    text-align: center;
     margin: 0 auto;
     max-width: 1400px;
     border: none;
 }
 
 .additional-section h3 {
-    font-size: 3.5rem; /* Tamaño original */
+    font-size: 3.5rem;
     text-align: left;
-    margin-bottom: 20px; /* Reduce el espacio inferior */
-    padding-bottom: 20px; /* Mantiene algo de espacio inferior para separación */
+    margin-bottom: 20px;
+    padding-bottom: 20px;
     padding-left: 120px;
 }
 
 .info-section {
-    padding-left: 0; /* Elimina el padding lateral */
-    padding-right: 0; /* Elimina el padding lateral */
-    max-width: calc(100% - 250px); /* Ajusta el ancho máximo para que coincida con la línea decorativa */
-    margin: 0 auto; /* Centra el contenido */
-    text-align: left; /* Alinea el texto a la izquierda dentro de la sección */
+    padding-left: 0;
+    padding-right: 0;
+    max-width: calc(100% - 250px);
+    margin: 0 auto;
+    text-align: left;
     justify-content: space-between;
 }
 
 .info-section h4 {
-    margin: 0 0 30px; /* Añade más espacio entre el título y el párrafo */
+    margin: 0 0 30px;
     font-weight: normal;
     text-align: left;
-    font-size: 1.5rem; /* Ajusta el tamaño de la fuente */
+    font-size: 1.5rem;
 }
 
 .info-section p {
     justify-content: space-between;
-    margin: 0 0 20px 0; /* Ajusta el margen inferior para más espacio */
-    max-width: calc(100% - 250px); 
-    font-size: 1.25rem; /* Ajusta el tamaño de la fuente */
-    text-align: left; /* Alinea el texto a la izquierda */
+    margin: 0 0 20px 0;
+    max-width: calc(100% - 250px);
+    font-size: 1.25rem;
+    text-align: left;
 }
 
 .info-section .bold-text {
     font-weight: bold;
-    margin-bottom: 40px; /* Añade espacio inferior */
-    margin-top: 40px; /* Añade espacio superior */
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .info-section .underline-bold-text {
     font-weight: bold;
     text-decoration: underline;
-    font-size: 1.25rem; /* Ajusta el tamaño de la fuente */
-    text-align: left; /* Alinea el texto a la izquierda */
+    font-size: 1.25rem;
+    text-align: left;
 }
 
 .decorative-line {
-    width: calc(100% - 250px); /* Ajusta la línea para que se alinee con el texto */
+    width: calc(100% - 250px);
     max-width: 100%;
     height: 2px;
     background-color: #000;
-    margin: 20px auto; /* Centra la línea */
+    margin: 20px auto;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Aumenta el espacio entre los campos del formulario */
+    gap: 30px;
     margin-top: 20px;
-    max-width: 500px; 
-    margin-left: 0; /* Alinea el formulario a la izquierda */
+    max-width: 500px;
+    margin-left: 0;
     margin-right: auto;
 }
 
 .form-group {
     display: flex;
     justify-content: space-between;
-    gap: 30px; /* Aumenta el espacio entre los campos del formulario */
+    gap: 30px;
 }
 
 .form-group-full {
@@ -183,8 +183,8 @@ label {
     color: #000;
     margin-bottom: 5px;
     display: block;
-    font-weight: bold; /* Make subtitles bold */
-    text-align: left; /* Align subtitles to the left */
+    font-weight: bold;
+    text-align: left;
 }
 
 input[type="text"], input[type="email"], input[type="tel"], textarea, select {
@@ -240,8 +240,8 @@ button:hover {
 
 .additional-content {
     display: flex;
-    background-color: white; /* Cambia el fondo a blanco */
-    align-items: flex-start; /* Ajusta la alineación para que comience desde arriba */
+    background-color: white;
+    align-items: flex-start;
     padding-top: 0;
 }
 
@@ -253,34 +253,34 @@ button:hover {
 
 .right-content-reversed {
     flex: 1;
-    text-align: left; /* Alinea el texto a la izquierda */
+    text-align: left;
     padding: 20px;
-    padding-top: 0; /* Ajusta el padding superior */
-    margin-left: 40px; /* Añade espacio entre la imagen y el texto */
+    padding-top: 0;
+    margin-left: 40px;
 }
 
 .center-text {
-    text-align: left; /* Alinea el texto a la izquierda */
+    text-align: left;
     margin-bottom: 20px;
-    max-width: 500px; 
-    margin-left: 0; /* Alinea el texto a la izquierda */
+    max-width: 500px;
+    margin-left: 0;
     margin-right: auto;
-    margin-top: 0; /* Ajusta el margen superior */
-    padding-top: 40px; /* Añade padding superior */
+    margin-top: 0;
+    padding-top: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra verticalmente el contenido */
+    justify-content: center;
 }
 
 .center-text h2 {
-    font-size: 3.5rem; /* Ajusta el tamaño de la fuente para que coincida con "Más información" */
-    margin-bottom: 10px; /* Ajusta el espacio inferior */
-    text-align: left; /* Alinea el título a la izquierda */
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
 .center-text p {
-    max-width: 500px; /* Ajusta el margen de ancho para que coincida con el formulario */
-    margin-left: 0; /* Alinea el párrafo a la izquierda */
+    max-width: 500px;
+    margin-left: 0;
 }
 
 h2 {
@@ -294,8 +294,8 @@ h2 {
 p {
     margin-bottom: 0;
     text-align: center;
-    max-width: 500px; 
-    margin-left: auto; 
+    max-width: 500px;
+    margin-left: auto;
     margin-right: auto;
 }
 
@@ -316,49 +316,199 @@ p {
     font-size: 1rem;
 }
 
-@media (max-width: 768px) {
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
     .content-container {
         flex-direction: column;
-        height: auto;
+        margin: 0 20px;
     }
 
-    .image-content {
-        width: 100%;
-        margin: 0;
-        text-align: center; /* Centra la imagen en dispositivos móviles */
-    }
-
-    .image-content img {
-        width: 100%;
-        height: auto; /* Mantén la proporción de la imagen */
-        margin: 0;
-    }
-
-    .additional-section {
-        padding: 40px 10px; /* Ajusta el padding a los lados */
+    .text-content, .image-content {
+        margin: 20px 0;
     }
 
     .additional-content {
+        flex-direction: column;
+    }
+
+    .right-content-reversed {
+        margin-left: 0;
+        padding: 20px 0;
+    }
+
+    .center-text {
         padding-top: 20px;
     }
 
     form {
-        width: 100%;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    input[type="text"], input[type="email"], input[type="tel"], textarea {
-        width: 90%;
-    }
-
-    .center-text {
+        max-width: 100%;
+        margin-left: 0;
         margin-right: 0;
     }
 }
 
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        margin: 0 20px;
+    }
 
+    .text-content, .image-content {
+        margin: 10px 0;
+    }
 
+    .additional-content {
+        flex-direction: column;
+    }
 
+    .right-content-reversed {
+        margin-left: 0;
+        padding: 10px 0;
+    }
 
+    .center-text {
+        padding-top: 10px;
+        max-width: 100%;
+    }
 
+    form {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        gap: 20px;
+    }
+
+    .form-group {
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+        width: 100%;
+    }
+
+    .additional-section h3 {
+        padding-left: 20px;
+        font-size: 2rem;
+    }
+
+    .text-content {
+        font-size: 1.75rem;
+        margin: 0 20px;
+        padding: 0 20px;
+    }
+
+    .small-text {
+        font-size: 1rem;
+        margin: 0 20px;
+        padding: 0 20px;
+    }
+
+    .info-section {
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .info-section h4, .info-section p {
+        text-align: center;
+    }
+
+    .info-section p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .decorative-line {
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-container {
+        flex-direction: column;
+        margin: 0 20px;
+    }
+
+    .text-content, .image-content {
+        margin: 5px 0;
+    }
+
+    .additional-content {
+        flex-direction: column;
+    }
+
+    .right-content-reversed {
+        margin-left: 0;
+        padding: 5px 0;
+    }
+
+    .center-text {
+        padding-top: 5px;
+        max-width: 100%;
+    }
+
+    form {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        gap: 10px;
+    }
+
+    .form-group {
+        gap: 5px;
+        flex-direction: column;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+        width: 100%;
+    }
+
+    .additional-section h3 {
+        padding-left: 10px;
+        font-size: 1.5rem;
+    }
+
+    .text-content {
+        font-size: 2.4rem; /* Ajuste realizado */
+        margin: 0 20px;
+        padding: 0 20px;
+    }
+
+    .text-content h2 {
+        font-size: 2.4rem; /* Ajuste realizado */
+    }
+
+    .text-content .spaced-text {
+        font-size: 2.4rem; /* Ajuste realizado */
+    }
+
+    .small-text {
+        font-size: 1.5rem;
+        margin: 0 20px;
+        padding: 0;
+    }
+
+    .info-section {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .info-section h4, .info-section p {
+        text-align: center;
+    }
+
+    .info-section p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .decorative-line {
+        margin: 20px auto;
+    }
+}
