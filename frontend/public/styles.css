@@ -116,10 +116,8 @@ body {
 .info-section {
     padding-left: 0;
     padding-right: 0;
-    max-width: calc(100% - 250px);
     margin: 0 auto;
     text-align: left;
-    justify-content: space-between;
 }
 
 .info-section h4 {
@@ -132,7 +130,6 @@ body {
 .info-section p {
     justify-content: space-between;
     margin: 0 0 20px 0;
-    max-width: calc(100% - 250px);
     font-size: 1.25rem;
     text-align: left;
 }
@@ -183,7 +180,6 @@ label {
     color: #000;
     margin-bottom: 5px;
     display: block;
-    font-weight: bold;
     text-align: left;
 }
 
@@ -317,44 +313,40 @@ p {
 }
 
 /* Media Queries for Responsive Design */
-@media (max-width: 1024px) {
-    .content-container {
-        flex-direction: column;
-        margin: 0 20px;
-    }
-
-    .text-content, .image-content {
-        margin: 20px 0;
-    }
-
-    .additional-content {
-        flex-direction: column;
-    }
-
-    .right-content-reversed {
-        margin-left: 0;
-        padding: 20px 0;
-    }
-
-    .center-text {
-        padding-top: 20px;
-    }
-
-    form {
-        max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-
 @media (max-width: 768px) {
     .content-container {
         flex-direction: column;
-        margin: 0 20px;
+        margin: 0;
+        padding: 0;
+        width: 100%;
     }
 
     .text-content, .image-content {
-        margin: 10px 0;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .text-content {
+        font-size: 1.75rem;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .text-content h2, .text-content .spaced-text {
+        text-align: left;
+        margin-left: 20px; /* Añadir margen a la izquierda */
+    }
+
+    .image-content {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .side-image {
+        width: 100%;
+        height: auto;
     }
 
     .additional-content {
@@ -369,6 +361,7 @@ p {
     .center-text {
         padding-top: 10px;
         max-width: 100%;
+        text-align: center;
     }
 
     form {
@@ -380,7 +373,14 @@ p {
 
     .form-group {
         gap: 10px;
-        flex-direction: column;
+    }
+
+    .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], .form-group textarea, .form-group select {
+        width: calc(50% - 5px);
+    }
+
+    .form-group-full {
+        width: 100%;
     }
 
     input[type="text"], input[type="email"], input[type="tel"], textarea, select {
@@ -392,37 +392,37 @@ p {
         font-size: 2rem;
     }
 
-    .text-content {
-        font-size: 1.75rem;
-        margin: 0 20px;
-        padding: 0 20px;
-    }
-
     .small-text {
         font-size: 1rem;
-        margin: 0 20px;
         padding: 0 20px;
     }
 
     .info-section {
-        padding-left: 20px;
-        padding-right: 20px;
-        max-width: 100%;
+        width: 100%;
+        padding: 0 20px; /* Añadir padding para dar espacio al texto */
+        box-sizing: border-box;
+    }
+
+    .info-section h4, .info-section p, .info-section .bold-text, .info-section .underline-bold-text, .info-section .no-margin-mobile {
+        width: 100%;
         margin: 0;
-        text-align: center;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    .info-section h4, .info-section p {
-        text-align: center;
-    }
-
-    .info-section p {
-        margin-left: auto;
-        margin-right: auto;
+    .info-section .spaced-text {
+        text-align: justify;
+        font-size: 1.2rem;
+        word-spacing: 0.25rem;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     .decorative-line {
         margin: 20px auto;
+        width: 100%; /* Ajustar el ancho de la línea decorativa en móviles */
     }
 
     .left-content-reversed {
@@ -434,16 +434,84 @@ p {
         padding-left: 20px;
         padding-right: 20px;
     }
+
+    .parallax {
+        width: calc(100% - 40px); /* Añadir margen a los lados */
+        margin: 0 20px;
+        height: auto; /* Asegurar que la imagen mantenga su altura */
+    }
 }
 
 @media (max-width: 480px) {
     .content-container {
         flex-direction: column;
-        margin: 0 20px;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .info-section {
+        width: 100%;
+        padding: 0 10px; /* Ajustar padding para pantallas más pequeñas */
+        box-sizing: border-box;
+    }
+
+    .info-section h4, .info-section p, .info-section .bold-text, .info-section .underline-bold-text, .info-section .no-margin-mobile {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .info-section .spaced-text {
+        text-align: justify;
+        font-size: 1.2rem;
+        word-spacing: 0.25rem;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     .text-content, .image-content {
-        margin: 5px 0;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .text-content {
+        font-size: 2.4rem; /* Ajuste realizado */
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .text-content h2, .text-content .spaced-text {
+        text-align: left;
+        margin-left: 20px; /* Añadir margen a la izquierda */
+    }
+
+    .image-content {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .side-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .text-content h2 {
+        font-size: 2.4rem; /* Ajuste realizado */
+    }
+
+    .text-content .spaced-text {
+        font-size: 2.4rem; /* Ajuste realizado */
+    }
+
+    .small-text {
+        font-size: 1.5rem;
+        padding: 0 20px; /* Ajuste realizado */
     }
 
     .additional-content {
@@ -458,6 +526,7 @@ p {
     .center-text {
         padding-top: 5px;
         max-width: 100%;
+        text-align: center;
     }
 
     form {
@@ -469,7 +538,14 @@ p {
 
     .form-group {
         gap: 5px;
-        flex-direction: column;
+    }
+
+    .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="tel"], .form-group textarea, .form-group select {
+        width: calc(50% - 5px);
+    }
+
+    .form-group-full {
+        width: 100%;
     }
 
     input[type="text"], input[type="email"], input[type="tel"], textarea, select {
@@ -481,45 +557,9 @@ p {
         font-size: 1.5rem;
     }
 
-    .text-content {
-        font-size: 2.4rem; /* Ajuste realizado */
-        margin: 0 20px;
-        padding: 0 20px;
-    }
-
-    .text-content h2 {
-        font-size: 2.4rem; /* Ajuste realizado */
-    }
-
-    .text-content .spaced-text {
-        font-size: 2.4rem; /* Ajuste realizado */
-    }
-
-    .small-text {
-        font-size: 1.5rem;
-        margin: 0 20px;
-        padding: 0;
-    }
-
-    .info-section {
-        padding-left: 0;
-        padding-right: 0;
-        max-width: 100%;
-        margin: 0;
-        text-align: center;
-    }
-
-    .info-section h4, .info-section p {
-        text-align: center;
-    }
-
-    .info-section p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .decorative-line {
         margin: 20px auto;
+        width: 100%; /* Ajustar el ancho de la línea decorativa en móviles */
     }
 
     .left-content-reversed {
@@ -532,14 +572,18 @@ p {
         padding-right: 20px;
     }
 
-    .parallax-container {
-        height: auto;
-    }
-
     .parallax {
-        position: relative;
-        width: 100%;
-        height: auto;
+        width: calc(100% - 20px); /* Añadir margen a los lados */
+        margin: 0 10px;
+        height: auto; /* Asegurar que la imagen mantenga su altura */
+    }
+}
+
+/* Specific styles for large screens */
+@media (min-width: 769px) {
+    .info-section h4, .info-section p {
+        padding-left: 120px; /* Añadir padding para mantener el texto alineado con la línea decorativa */
+        max-width: 1000px; /* Ajuste del ancho máximo para evitar que el texto se corte demasiado pronto */
     }
 }
 
